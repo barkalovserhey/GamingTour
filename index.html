@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GamingTour – Турниры на деньги</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Firebase SDK (v9 CDN) -->
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>GamingTour</h1>
+            <div class="auth">
+                <button id="loginBtn">Войти / Регистрация</button>
+                <button id="logoutBtn" style="display:none;">Выйти</button>
+                <span id="userEmail"></span>
+            </div>
+        </header>
+
+        <main>
+            <h2>Активные турниры</h2>
+            <button id="createBtn" class="primary">+ Создать турнир</button>
+            <div id="tournamentsList"></div>
+        </main>
+    </div>
+
+    <!-- Форма создания турнира (скрытая) -->
+    <div id="createModal" class="modal">
+        <div class="modal-content">
+            <span class="close">×</span>
+            <h2>Создать турнир</h2>
+            <input type="text" id="tName" placeholder="Название турнира">
+            <input type="number" id="tFee" placeholder="Взнос (грн)" min="10">
+            <input type="number" id="tPrize" placeholder="Призовой фонд (грн)" min="100">
+            <select id="tGame">
+                <option value="mlbb">Mobile Legends</option>
+                <option value="codm">Call of Duty Mobile</option>
+                <option value="pubg">PUBG Mobile</option>
+                <option value="freefire">Free Fire</option>
+            </select>
+            <button id="submitTournament" class="primary">Создать</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>ыы

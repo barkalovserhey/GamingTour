@@ -1,0 +1,150 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+    background: #0f0f17;
+    color: #e0e0e0;
+    font-family: 'Segoe UI', sans-serif;
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+    border-bottom: 1px solid #333;
+    margin-bottom: 40px;
+}
+
+h1 {
+    font-size: 2.5rem;
+    background: linear-gradient(90deg, #ff6b35, #f7931e);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 800;
+}
+
+.auth button {
+    background: #ff6b35;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-left: 10px;
+    transition: all 0.3s;
+}
+
+.auth button:hover {
+    background: #e55a2b;
+    transform: translateY(-2px);
+}
+
+.primary {
+    background: #ff6b35 !important;
+    padding: 14px 28px !important;
+    font-size: 1.1rem !important;
+    border-radius: 12px !important;
+}
+
+h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+    text-align: center;
+    color: #ff6b35;
+}
+
+#tournamentsList {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.tournament {
+    background: #1a1a2e;
+    border-radius: 16px;
+    padding: 25px;
+    border: 1px solid #333;
+    transition: all 0.3s;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+}
+
+.tournament:hover {
+    transform: translateY(-10px);
+    border-color: #ff6b35;
+    box-shadow: 0 10px 30px rgba(255,107,53,0.2);
+}
+
+.tournament h3 {
+    color: #ff6b35;
+    margin-bottom: 15px;
+    font-size: 1.4rem;
+}
+
+.tournament p {
+    margin: 10px 0;
+    color: #aaa;
+}
+
+.tournament button {
+    width: 100%;
+    background: #ff6b35;
+    margin-top: 15px;
+    padding: 12px;
+    font-size: 1.1rem;
+}
+
+/* Модальное окно создания турнира */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0; top: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.8);
+}
+
+.modal-content {
+    background: #1a1a2e;
+    margin: 5% auto;
+    padding: 40px;
+    width: 90%;
+    max-width: 500px;
+    border-radius: 16px;
+    border: 1px solid #ff6b35;
+    position: relative;
+}
+
+.close {
+    position: absolute;
+    top: 15px;
+    right: 25px;
+    font-size: 2rem;
+    cursor: pointer;
+    color: #aaa;
+}
+
+.close:hover { color: #ff6b35; }
+
+.modal input, .modal select {
+    width: 100%;
+    padding: 15px;
+    margin: 15px 0;
+    background: #16213e;
+    border: 1px solid #333;
+    border-radius: 8px;
+    color: white;
+    font-size: 1rem;
+}
+
+@media (max-width: 768px) {
+    #tournamentsList { grid-template-columns: 1fr; }
+    header { flex-direction: column; gap: 20px; }
+}
